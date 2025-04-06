@@ -1,5 +1,5 @@
-## Don't Crash The SpaceX Rocket!
-# A Python-based pixel game
+# Don't Crash The SpaceX Rocket!
+## A Python-based pixel game
 
 Instructions:
 
