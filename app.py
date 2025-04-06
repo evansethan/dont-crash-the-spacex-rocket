@@ -2,6 +2,8 @@ import pyxel, random
 
 STARTX = 55
 STARTY = 105
+RSPEED = 2
+TSPEED = 1
 
 class App:
 
@@ -9,13 +11,13 @@ class App:
         pyxel.init(128,128,title="Don't Crash The SpaceX Rocket")
         self.rocket_x = STARTX
         self.rocket_y = STARTY
-        self.obstacle_list = [] # need gas/coin list
-        #self.counter = 0 # turn into gas tank?
+        self.obstacle_list = []
+        self.tank_list = []
         self.score = 0
         self.record = 0
         self.obstacle_freq = 45.0
         self.gas = 100
-        self.tank_list = []
+        
 
         pyxel.load("res.pyxres")
         pyxel.run(self.update,self.draw)
@@ -31,20 +33,20 @@ class App:
     def move_rocket(self):
         if pyxel.btn(pyxel.KEY_RIGHT):
             if (self.rocket_x+16 < 120):                                 
-                self.rocket_x+=2
+                self.rocket_x+=RSPEED
         if pyxel.btn(pyxel.KEY_LEFT):
             if (self.rocket_x > 8):          
-                self.rocket_x-=2
+                self.rocket_x-=RSPEED
         if pyxel.btn(pyxel.KEY_DOWN):
             if (self.rocket_y+20 < 128):
-                self.rocket_y+=2
+                self.rocket_y+=RSPEED
         if pyxel.btn(pyxel.KEY_UP):
             if (self.rocket_y > 0):
-                self.rocket_y-=2
+                self.rocket_y-=RSPEED
 
         if self.gas <= 0:
             self.reset()
-            # explosion, out of gas
+            # out of gas display
     
 
     def obstacles(self):
@@ -70,7 +72,7 @@ class App:
             self.tank_list.append([random.randint(8, 100),-10])
         
         for tank in self.tank_list:
-            tank[1] += 1
+            tank[1] += TSPEED
             if  tank[1]>128:
                 self.tank_list.remove(tank)
              
