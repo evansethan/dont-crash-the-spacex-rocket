@@ -5,6 +5,11 @@ STARTY = 105
 RSPEED = 2
 TSPEED = 1
 
+# explosions, out of gas display
+# expand game window a bit
+# rocket booster animation
+# stars in background?
+
 class App:
 
     def __init__(self):
