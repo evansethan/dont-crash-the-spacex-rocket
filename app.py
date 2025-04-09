@@ -6,6 +6,7 @@ RSPEED = 2
 TSPEED = 1
 
 # explosions, out of gas display
+# gas goes down when you move
 # expand game window a bit
 # rocket booster animation
 # stars in background?
