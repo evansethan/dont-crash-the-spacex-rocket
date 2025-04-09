@@ -1,7 +1,11 @@
 # Don't Crash The SpaceX Rocket!
 ## A Python-based pixel game
 
-Instructions:
+### Instructions:
+Play the game here: https://dont-crash-the-spacex-rocket.netlify.app/
+
+
+### To install on your machine:
 
 Make sure you have at least Python 3.13 installed, and install uv on your system
 using "pip install uv" or however you see fit.
